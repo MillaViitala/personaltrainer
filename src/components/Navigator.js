@@ -82,6 +82,12 @@ export default function CustomizedMenus() {
   <a class="nav-link" style={{color: "black"}} href="/customerlist">Customers</a>
 </li>
         </StyledMenuItem>
+        <StyledMenuItem>
+    
+<li class="nav-item">
+  <a class="nav-link" href="/workoutcalendar" style={{color: "black"}}>Calendar</a>
+</li>
+        </StyledMenuItem>
       </StyledMenu>
       </AppBar>
     </div>

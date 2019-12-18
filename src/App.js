@@ -4,6 +4,7 @@ import './App.css';
 import Customerlist from './components/Customerlist';
 import Trainings from './components/Trainings';
 import Navigator from './components/Navigator';
+import Calendar from './components/Calendar';
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
               <Route exact path="/" component={Customerlist}></Route>
               <Route path="/Customerlist" component={Customerlist}></Route>
               <Route path="/Trainings" component={Trainings}></Route>
+              <Route path="/WorkoutCalendar" component={Calendar} />
             </Switch>
             </BrowserRouter>
       
