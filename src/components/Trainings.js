@@ -9,9 +9,10 @@ export default function Trainings() {
     useEffect(() => fetchData() , []);
 
     const fetchData = () => {
-        fetch('https://customerrest.herokuapp.com/api/trainings')
+        fetch('https://customerrest.herokuapp.com/gettrainings')
         .then(response => response.json())
-        .then(data => setTrainings(data.content))
+        .then(data => setTrainings(data))
+        .catch (err => console.error(err))
     }
 
     const columns = [
@@ -28,15 +29,21 @@ export default function Trainings() {
             Header: 'Activity',
             accessor: 'activity'
         },
+
         {
-            Header: 'Customer',
-            accessor: 'cstomer.id'
+            Header: 'Firstname',
+            accessor: 'customer.firstname'
+        },
+
+        {
+            Header: 'Lastname',
+            accessor: 'customer.lastname'
         },
     ]
 
     return(
         <div>
-            <ReactTable filterable={true} data={trainings} columns={columns} />
+            <ReactTable filterable={true} sortable={true} data={trainings} columns={columns} />
 
         </div>
     );
